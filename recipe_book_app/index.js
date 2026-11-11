@@ -1,8 +1,8 @@
 const { ObjectId } = require('mongodb');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-// const { generateSearchParams, generateRecipe } = require('./gemini');
-const { generateSearchParams, generateRecipe } = require('./groq');
+ const { generateSearchParams, generateRecipe } = require('./gemini');
+//const { generateSearchParams, generateRecipe } = require('./groq');
 
 const generateAccessToken = (id, email) => {
     return jwt.sign({
@@ -414,7 +414,7 @@ async function main() {
         app.get('/profile', verifyToken, (req, res) => {
             res.json({ message: 'This is a protected route', user: req.user });
         });
-       //lab09        ff        fdfdfggg
+       //lab09        ff     vv      fdfdfggg
         app.get('/ai/recipes', async function (req, res) {
             const query = req.query.q;
 
